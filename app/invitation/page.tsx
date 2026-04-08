@@ -1,52 +1,107 @@
-export default function InvitationPage() {
+export default function CastingPage() {
   return (
-    <div className="min-h-screen bg-zinc-950 flex flex-col items-center justify-center p-4 relative overflow-hidden">
+    <div className="min-h-screen bg-[#060607] text-zinc-200 selection:bg-amber-500/30 font-sans pb-32 relative overflow-hidden">
       
-      {/* Effetto luce di sfondo */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-amber-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] h-[1000px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-900/20 via-[#060607] to-[#060607] pointer-events-none"></div>
 
-      {/* Card Centrale */}
-      <div className="w-full max-w-md bg-zinc-900/50 backdrop-blur-md border border-zinc-800 rounded-2xl p-8 shadow-2xl relative z-10 text-center">
-        
-        {/* Logo Icona Minimal */}
-        <div className="w-12 h-12 border border-amber-500/30 rounded-full flex items-center justify-center mx-auto mb-6">
-          <svg className="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
-          </svg>
+      <div className="relative z-10 pt-20 pb-28 px-6 text-center">
+        <h1 className="text-xs tracking-[0.4em] text-amber-500 uppercase mb-5 font-semibold">Luxe-Nordic Digital</h1>
+        <h2 className="font-serif text-4xl md:text-5xl font-light tracking-wide text-white mb-5 leading-tight">Il tuo Scudo contro <br/>i Perditempo.</h2>
+        <p className="max-w-xl mx-auto text-zinc-400 text-base leading-relaxed font-light italic">&quot;Basta ore perse in chat infinite con chi non fa sul serio. Noi filtriamo i curiosi, tu dedichi il tuo tempo solo all&apos;élite.&quot;</p>
+      </div>
+
+      <div className="max-w-xl mx-auto px-6 -mt-16 relative z-20 mb-32">
+        <div className="bg-black/40 backdrop-blur-2xl border border-amber-900/30 p-10 rounded-3xl shadow-[0_20px_60px_-10px_rgba(217,119,6,0.2)]">
+          <h3 className="text-center font-serif text-2xl text-white mb-2 font-light">Candidatura Riservata</h3>
+          <p className="text-center text-[10px] tracking-[0.2em] text-amber-500 uppercase mb-8 font-medium">Accesso Esclusivo • Copenaghen</p>
+          
+          <form action="https://formspree.io/f/xdapjqon" method="POST" className="space-y-6">
+            <input type="hidden" name="_next" value="https://IL_TUO_VERCEL.app/thanks" />
+            <input type="hidden" name="Origine_Contatto" value="Casting Ragazze" />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <input type="text" name="Nome_Reale" placeholder="Nome Reale" required className="w-full bg-black/50 border border-zinc-800 text-white rounded-xl px-5 py-4 focus:outline-none focus:border-amber-600 transition-all text-sm font-light" />
+              <input type="text" name="Alias" placeholder="Alias / Nome d&apos;arte" required className="w-full bg-black/50 border border-zinc-800 text-white rounded-xl px-5 py-4 focus:outline-none focus:border-amber-600 transition-all text-sm font-light" />
+            </div>
+            <input type="email" name="Email_Contatto" placeholder="Email Privata" required className="w-full bg-black/50 border border-zinc-800 text-white rounded-xl px-5 py-4 focus:outline-none focus:border-amber-600 transition-all text-sm font-light" />
+
+            <div className="space-y-3">
+              <label className="block text-[10px] font-medium text-amber-500 uppercase tracking-widest pl-1">Canali Attivi</label>
+              <div className="flex gap-3">
+                <select name="Piattaforma_Principale" className="w-1/3 bg-black/50 border border-zinc-800 rounded-xl px-4 py-4 text-sm focus:outline-none focus:border-amber-600 text-zinc-400 font-light">
+                  <option>Instagram</option>
+                  <option>TikTok</option>
+                  <option>X / Twitter</option>
+                  <option>OnlyFans</option>
+                </select>
+                <input type="url" name="Link_Social" placeholder="Incolla link profilo" required className="w-2/3 bg-black/50 border border-zinc-800 text-white rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-amber-600" />
+              </div>
+            </div>
+
+            <div className="space-y-3 pt-3">
+              <label className="block text-[10px] font-medium text-amber-500 uppercase tracking-widest pl-1">Materiale Visivo (Richiesto dopo l&apos;invio)</label>
+              <p className="text-xs text-zinc-500 font-light italic">
+                Per garantire la tua privacy, i file pesanti non passano da qui. Dopo l&apos;invio riceverai un link sicuro via email per caricare il tuo portfolio in alta risoluzione.
+              </p>
+            </div>
+
+            <button type="submit" className="w-full bg-amber-600 hover:bg-amber-500 text-black font-bold tracking-widest py-5 px-4 rounded-xl transition-all mt-5 shadow-lg text-xs uppercase">
+              Invia Candidatura
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div className="relative z-10 max-w-5xl mx-auto px-6 space-y-24">
+        <div className="text-center mb-16">
+          <h2 className="text-xs tracking-[0.4em] text-amber-500 uppercase font-semibold mb-3">Il Metodo Luxe-Nordic</h2>
+          <p className="font-serif text-3xl font-light text-white">I Quattro Pilastri del Management.</p>
         </div>
 
-        <h1 className="text-3xl font-light text-white tracking-widest uppercase mb-2">
-          The Nordic Manor
-        </h1>
-        <p className="text-zinc-400 text-sm mb-8 font-light tracking-wide">
-          Private Digital Club • Copenaghen
-        </p>
-
-        <form className="space-y-4">
-          <div className="text-left">
-            <label htmlFor="email" className="block text-xs text-zinc-500 uppercase tracking-wider mb-2">
-              Richiedi Accesso Prioritario
-            </label>
-            <input 
-              type="email" 
-              id="email" 
-              placeholder="Inserisci la tua email" 
-              required
-              className="w-full bg-zinc-950 border border-zinc-800 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-amber-500 transition-colors"
-            />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6 order-2 md:order-1">
+            <h3 className="font-serif text-3xl text-white font-light">1. Filtro Concierge<br/> <span className="text-amber-500">Solo Richieste Reali.</span></h3>
+            <p className="text-zinc-400 font-light leading-relaxed">Ci occupiamo noi della noiosa fase iniziale, smistando le richieste e scartando chi non ha intenzioni serie o budget adeguato.</p>
           </div>
+          <div className="bg-gradient-to-br from-amber-900/10 to-transparent border border-amber-900/20 p-8 rounded-3xl order-1 md:order-2">
+            <div className="text-amber-500 font-serif text-5xl mb-4">“</div>
+            <p className="text-white text-lg font-light italic leading-relaxed">&quot;Non perdo più ore al telefono. Ricevo solo contatti di gentiluomini già filtrati.&quot;</p>
+          </div>
+        </div>
 
-          <button 
-            type="submit" 
-            className="w-full bg-amber-600 hover:bg-amber-500 text-white font-medium tracking-wide py-3 px-4 rounded-lg transition-colors"
-          >
-            Unisciti alla Lista d'Attesa
-          </button>
-        </form>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="bg-gradient-to-br from-zinc-900/50 to-transparent border border-zinc-800 p-8 rounded-3xl">
+            <span className="text-2xl mb-4 block">📈</span>
+            <p className="text-white text-lg font-light italic leading-relaxed">Il lusso si percepisce al primo sguardo. Eleviamo i tuoi canali per attrarre follower disposti a spendere.</p>
+          </div>
+          <div className="space-y-6">
+            <h3 className="font-serif text-3xl text-white font-light">2. Estetica Editoriale<br/> <span className="text-amber-500">Crescita High-End.</span></h3>
+            <p className="text-zinc-400 font-light leading-relaxed">Gestiamo i tuoi profili social con un approccio da brand di moda. Niente contenuti cheap, solo eleganza assoluta.</p>
+          </div>
+        </div>
 
-        <p className="text-xs text-amber-500/70 mt-6 font-light">
-          I primi 50 membri riceveranno 100 Crediti Founder all'apertura.
-        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6 order-2 md:order-1">
+            <h3 className="font-serif text-3xl text-white font-light">3. Il Club Privato<br/> <span className="text-amber-500">Monetizzazione Blindata.</span></h3>
+            <p className="text-zinc-400 font-light leading-relaxed">Il nostro sistema converte i tuoi follower in clienti paganti all&apos;interno del nostro Club Digitale chiuso.</p>
+          </div>
+          <div className="bg-gradient-to-br from-zinc-900/50 to-transparent border border-zinc-800 p-8 rounded-3xl order-1 md:order-2">
+            <span className="text-2xl mb-4 block">🗝️</span>
+            <p className="text-white text-lg font-light italic leading-relaxed">I tuoi clienti ti troveranno solo dietro le porte chiuse della nostra Villa virtuale.</p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="bg-gradient-to-br from-amber-900/10 to-transparent border border-amber-900/20 p-8 rounded-3xl">
+            <span className="text-2xl mb-4 block">📸</span>
+            <p className="text-white text-lg font-light italic leading-relaxed">Ti offriamo il set, le luci e la direzione artistica per dominare il mercato di Copenaghen.</p>
+          </div>
+          <div className="space-y-6">
+            <h3 className="font-serif text-3xl text-white font-light">4. Produzione Visiva<br/> <span className="text-amber-500">Shooting in Omaggio.</span></h3>
+            <p className="text-zinc-400 font-light leading-relaxed">Le professioniste selezionate avranno accesso al nostro team creativo e a una location esclusiva per un portfolio in 4K.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   );
