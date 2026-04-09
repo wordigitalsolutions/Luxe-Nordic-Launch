@@ -14,7 +14,6 @@ export default function CastingPage() {
     );
   };
 
-  // IL MOTORE INVISIBILE CHE BYPASSA IL PAYWALL DI FORMSPREE
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -32,10 +31,9 @@ export default function CastingPage() {
       });
       
       if (response.ok) {
-        // Teletrasporto immediato alla nostra pagina senza passare da Formspree
         router.push('/thanks');
       } else {
-        alert("C'e stato un errore. Riprova.");
+        alert("C e stato un errore. Riprova.");
         setIsSubmitting(false);
       }
     } catch (error) {
@@ -46,8 +44,6 @@ export default function CastingPage() {
 
   return (
     <div className="min-h-screen bg-[#040405] text-zinc-100 font-sans pb-32 relative overflow-hidden selection:bg-amber-500/40">
-      
-      {/* Sfondo Animato */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-[-20%] left-[-10%] w-[140%] h-[140%] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-900/20 via-[#040405] to-[#040405]"></div>
       </div>
@@ -62,7 +58,6 @@ export default function CastingPage() {
           <h3 className="text-center font-serif text-3xl text-white mb-2 font-light italic">Candidatura Riservata</h3>
           <p className="text-center text-[10px] tracking-[0.3em] text-amber-500 uppercase mb-10 font-medium">Accesso Esclusivo - Copenaghen</p>
           
-          {/* IL FORM ORA USA IL NOSTRO MOTORE INVISIBILE (onSubmit={handleSubmit}) */}
           <form action="https://formspree.io/f/xdapjqon" method="POST" onSubmit={handleSubmit} className="space-y-8">
             <input type="hidden" name="Origine" value="Casting Avanzato" />
 
@@ -75,7 +70,7 @@ export default function CastingPage() {
 
             <div className="space-y-5 bg-black/50 p-6 rounded-2xl border border-zinc-800/50">
               <label className="block text-[11px] font-medium text-amber-500 uppercase tracking-widest">
-                Portafoglio e Canali (Seleziona le tue piattaforme)
+                Portafoglio e Canali (Seleziona piattaforme)
               </label>
               
               <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
@@ -104,7 +99,7 @@ export default function CastingPage() {
                       <input 
                         type="url" 
                         name={`Link_${platform}`} 
-                        placeholder={`Incolla il link del profilo ${platform}`} 
+                        placeholder={`Incolla link profilo ${platform}`} 
                         required 
                         className="w-full bg-white/5 border border-zinc-700 text-white rounded-xl px-5 py-3 focus:outline-none focus:border-amber-500 text-sm font-light" 
                       />
@@ -116,9 +111,9 @@ export default function CastingPage() {
 
             <div className="space-y-2 border border-dashed border-amber-900/50 p-5 rounded-2xl bg-amber-950/10 text-center">
               <span className="text-2xl block mb-2">📸</span>
-              <label className="block text-xs font-medium text-amber-500 uppercase tracking-widest">Media Portfolio (10 Foto + 3 Video)</label>
+              <label className="block text-xs font-medium text-amber-500 uppercase tracking-widest">Media Portfolio</label>
               <p className="text-[11px] text-zinc-400 font-light leading-relaxed">
-                Per garantire la massima qualita e privacy, il caricamento dei file pesanti avverra nel <b>Passaggio 2</b>. 
+                Il caricamento dei file pesanti avverra nel <b>Passaggio 2</b>. 
                 <br/>Una volta premuto Invia, si aprira la nostra cassaforte privata.
               </p>
             </div>

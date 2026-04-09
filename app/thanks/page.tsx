@@ -1,22 +1,18 @@
 export default function ThankYouPage() {
   return (
     <div className="min-h-screen bg-[#040405] text-zinc-200 flex flex-col items-center justify-center p-6 relative overflow-hidden font-sans selection:bg-amber-500/40">
-      
-      {/* Sfondo con luce soffusa */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-amber-900/10 via-[#040405] to-[#040405]"></div>
       </div>
 
       <div className="relative z-10 text-center max-w-lg w-full bg-black/60 backdrop-blur-3xl border border-amber-900/40 p-10 md:p-14 rounded-[2.5rem] shadow-[0_0_80px_-10px_rgba(217,119,6,0.2)]">
-        
-        {/* Icona di successo dorata */}
         <div className="w-20 h-20 border border-amber-500/50 rounded-full flex items-center justify-center mx-auto mb-8 bg-amber-950/30 text-amber-400 text-3xl shadow-[0_0_30px_rgba(217,119,6,0.2)]">
           ✓
         </div>
         
         <h1 className="font-serif text-3xl md:text-4xl text-white font-black italic mb-4">Passaggio 1 Completato.</h1>
         <p className="text-zinc-400 font-light leading-relaxed text-sm mb-10">
-          Abbiamo ricevuto i tuoi dati. Per avviare ufficialmente la valutazione del tuo profilo, procedi ora con l&apos;upload del materiale visivo.
+          Abbiamo ricevuto i tuoi dati. Per avviare ufficialmente la valutazione del tuo profilo, procedi ora con l upload del materiale visivo.
         </p>
 
         <div className="bg-amber-950/10 border border-amber-900/50 p-8 rounded-3xl mb-10 relative overflow-hidden">
@@ -28,7 +24,6 @@ export default function ThankYouPage() {
             Seleziona almeno 10 foto e 3 video. I file verranno inviati direttamente alla nostra cassaforte crittografata.
           </p>
           
-          {/* IL TUO LINK DROPBOX FUNZIONANTE */}
           <a 
             href="https://www.dropbox.com/request/Re3JJ33EuHQJqSikEJ8x" 
             target="_blank" 
@@ -37,11 +32,11 @@ export default function ThankYouPage() {
           >
             Apri Cassaforte Upload
           </a>
-        </div>
 
-        <a href="/casting" className="text-[10px] tracking-[0.2em] text-zinc-600 hover:text-amber-500 uppercase transition-colors font-semibold">
-          ← Torna al sito
-        </a>
+          <p className="mt-6 text-[10px] text-zinc-500 font-light italic">
+            Dopo l upload, puoi chiudere questa finestra. <br/> Verrai contattata entro 48h.
+          </p>
+        </div>
       </div>
     </div>
   );
