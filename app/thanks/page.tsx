@@ -10,17 +10,17 @@ export default function ThankYouPage() {
           ✓
         </div>
         
-        <h1 className="font-serif text-3xl md:text-4xl text-white font-black italic mb-4">Passaggio 1 Completato.</h1>
-        <p className="text-zinc-400 font-light leading-relaxed text-sm mb-10">
+        <h1 className="font-serif text-3xl md:text-4xl text-white font-black italic mb-4 text-center">Completato.</h1>
+        <p className="text-zinc-400 font-light leading-relaxed text-sm mb-10 text-center">
           Abbiamo ricevuto i tuoi dati. Per avviare ufficialmente la valutazione del tuo profilo, procedi ora con l upload del materiale visivo.
         </p>
 
         <div className="bg-amber-950/10 border border-amber-900/50 p-8 rounded-3xl mb-8 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-20 h-20 bg-amber-500/10 blur-2xl"></div>
           
-          <span className="text-3xl block mb-4">🔒</span>
-          <p className="text-xs text-amber-500 uppercase tracking-widest font-bold mb-3">Passaggio 2: Caricamento Sicuro</p>
-          <p className="text-xs text-zinc-400 font-light mb-8 leading-relaxed">
+          <span className="text-3xl block mb-4 text-center">🔒</span>
+          <p className="text-xs text-amber-500 uppercase tracking-widest font-bold mb-3 text-center text-center">Passaggio 2: Caricamento Sicuro</p>
+          <p className="text-xs text-zinc-400 font-light mb-8 leading-relaxed text-center">
             Seleziona almeno 10 foto e 3 video. I file verranno inviati direttamente alla nostra cassaforte crittografata (si aprira in una nuova scheda).
           </p>
           
@@ -34,15 +34,14 @@ export default function ThankYouPage() {
           </a>
         </div>
 
-        {/* IL BOTTONE CORRETTO CHE PORTA ALLA PAGINA /final (TUTTO MINUSCOLO) */}
         <a 
-          href="/final" 
+          href="/finale" 
           className="inline-block mt-2 mb-8 text-xs tracking-widest text-amber-500 hover:text-amber-400 uppercase transition-colors font-bold border-b border-amber-500/30 hover:border-amber-400 pb-1"
         >
           Ho completato l upload →
         </a>
 
-        <div className="block mt-4">
+        <div className="block mt-4 text-center text-center">
           <a href="/casting" className="text-[10px] tracking-[0.2em] text-zinc-600 hover:text-amber-500 uppercase transition-colors font-semibold">
             ← Torna al sito
           </a>
