@@ -1,9 +1,7 @@
 "use client";
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 
 export default function InvitationPage() {
-  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -19,11 +17,12 @@ export default function InvitationPage() {
         body: data,
         headers: { 'Accept': 'application/json' }
       });
+      
       if (response.ok) {
-        // TELETRASPORTO ALLA NUOVA PAGINA DI RINGRAZIAMENTO UOMINI
-        router.push('/invitation-thanks');
+        // TELETRASPORTO BRUTALE E INFALLIBILE DEL BROWSER
+        window.location.href = '/invitation-thanks';
       } else {
-        alert("Errore nell invio.");
+        alert("Errore nell invio. Riprova.");
         setIsSubmitting(false);
       }
     } catch (error) {
