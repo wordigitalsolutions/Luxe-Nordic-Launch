@@ -34,9 +34,9 @@ export default function ThankYouPage() {
           </a>
         </div>
 
-        {/* IL NUOVO BOTTONE CHE PORTA ALLA PAGINA FINAL */}
+        {/* IL BOTTONE CORRETTO CHE PORTA A /Finale */}
         <a 
-          href="/final" 
+          href="/Finale" 
           className="inline-block mt-2 mb-8 text-xs tracking-widest text-amber-500 hover:text-amber-400 uppercase transition-colors font-bold border-b border-amber-500/30 hover:border-amber-400 pb-1"
         >
           Ho completato l upload →
