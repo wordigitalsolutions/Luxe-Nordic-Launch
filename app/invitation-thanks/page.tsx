@@ -1,60 +1,41 @@
-"use client";
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-
-export default function InvitationPage() {
-  const router = useRouter();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    const form = e.currentTarget;
-    const data = new FormData(form);
-
-    try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-      if (response.ok) {
-        // TELETRASPORTO ALLA NUOVA PAGINA DI RINGRAZIAMENTO UOMINI
-        router.push('/invitation-thanks');
-      } else {
-        alert("Errore nell invio.");
-        setIsSubmitting(false);
-      }
-    } catch (error) {
-      alert("Errore di connessione.");
-      setIsSubmitting(false);
-    }
-  };
-
+export default function InvitationThanks() {
   return (
-    <div className="min-h-screen bg-[#060607] flex flex-col items-center justify-center p-4 relative overflow-hidden font-sans text-white selection:bg-amber-500/30">
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-amber-900/20 rounded-full blur-[100px] pointer-events-none"></div>
+    <div className="min-h-screen bg-[#060607] flex flex-col items-center justify-center p-6 relative overflow-hidden font-sans text-white selection:bg-amber-500/30">
       
-      <div className="w-full max-w-md bg-black/40 backdrop-blur-2xl border border-amber-900/30 rounded-3xl p-10 shadow-[0_20px_60px_-10px_rgba(217,119,6,0.15)] relative z-10 text-center">
+      {/* Sfondo Animato Manor */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[100%] h-[100%] bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-amber-900/15 via-[#060607] to-[#060607] pointer-events-none"></div>
+
+      <div className="w-full max-w-xl bg-black/40 backdrop-blur-3xl border border-amber-900/30 rounded-[3rem] p-12 md:p-16 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.8)] relative z-10 text-center">
         
-        <h1 className="text-3xl tracking-wide mb-2 font-light font-serif italic">The Nordic Manor</h1>
-        <p className="text-xs text-amber-500 uppercase tracking-[0.2em] mb-8 font-medium">Private Digital Club - Copenaghen</p>
+        {/* Il Sigillo d'Oro */}
+        <div className="w-24 h-24 border border-amber-500/40 rounded-full flex items-center justify-center mx-auto mb-10 bg-amber-950/20 shadow-[0_0_50px_rgba(217,119,6,0.15)]">
+          <span className="text-amber-500 text-4xl font-serif italic">N</span>
+        </div>
+
+        <h1 className="font-serif text-3xl md:text-4xl text-white font-light mb-6 tracking-tight">
+          Richiesta di Accesso <br/> <span className="text-amber-500 italic">Confermata.</span>
+        </h1>
         
-        <form action="https://formspree.io/f/xdapjqon" method="POST" onSubmit={handleSubmit} className="space-y-5">
-          <input type="hidden" name="Origine" value="Uomini Waitlist" />
-          <div className="text-left">
-            <label className="block text-[10px] text-zinc-500 uppercase tracking-widest mb-2 pl-1">Accesso Prioritario</label>
-            <input name="Email" type="email" placeholder="Inserisci email privata" required className="w-full bg-black/50 border border-zinc-800 text-white rounded-xl px-5 py-4 focus:outline-none focus:border-amber-600 text-sm font-light" />
+        <div className="space-y-6 text-zinc-400 font-light text-base leading-relaxed mb-12">
+          <p>
+            Il tuo profilo e stato inserito con successo nella lista d attesa prioritaria per il lancio ufficiale di <span className="text-white font-medium">The Nordic Manor</span>.
+          </p>
+          <div className="p-4 bg-amber-950/10 border border-amber-900/20 rounded-2xl">
+            <p className="text-xs text-amber-500 font-bold uppercase tracking-widest mb-1">Founder Privilege</p>
+            <p className="text-sm italic text-zinc-300">
+              Abbiamo riservato i tuoi 100 Crediti Founder. Saranno accreditati automaticamente al tuo primo accesso.
+            </p>
           </div>
-          <button type="submit" disabled={isSubmitting} className="w-full bg-amber-600 hover:bg-amber-500 text-black font-semibold tracking-widest py-4 px-4 rounded-xl transition-all shadow-lg text-xs uppercase disabled:opacity-50">
-            {isSubmitting ? "Elaborazione..." : "Unisciti alla Lista"}
-          </button>
-        </form>
-        
-        <p className="text-[10px] text-amber-500/80 mt-6 font-light tracking-wide italic leading-relaxed">
-          I primi 50 membri riceveranno 100 Crediti Founder <br/> al momento del lancio ufficiale.
-        </p>
+          <p className="text-sm italic text-zinc-500">
+            Il club opera su base strettamente limitata. Riceverai i dettagli per l attivazione dell account e le novita sul portafoglio modelle direttamente al tuo indirizzo email riservato.
+          </p>
+        </div>
+
+        <div className="pt-8 border-t border-zinc-900">
+          <a href="/invitation" className="text-[10px] tracking-[0.4em] text-zinc-600 hover:text-amber-500 uppercase transition-colors font-bold">
+            ← Torna all Atrio
+          </a>
+        </div>
       </div>
     </div>
   );
