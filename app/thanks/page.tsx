@@ -15,13 +15,13 @@ export default function ThankYouPage() {
           Abbiamo ricevuto i tuoi dati. Per avviare ufficialmente la valutazione del tuo profilo, procedi ora con l upload del materiale visivo.
         </p>
 
-        <div className="bg-amber-950/10 border border-amber-900/50 p-8 rounded-3xl mb-10 relative overflow-hidden">
+        <div className="bg-amber-950/10 border border-amber-900/50 p-8 rounded-3xl mb-8 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-20 h-20 bg-amber-500/10 blur-2xl"></div>
           
           <span className="text-3xl block mb-4">🔒</span>
           <p className="text-xs text-amber-500 uppercase tracking-widest font-bold mb-3">Passaggio 2: Caricamento Sicuro</p>
           <p className="text-xs text-zinc-400 font-light mb-8 leading-relaxed">
-            Seleziona almeno 10 foto e 3 video. I file verranno inviati direttamente alla nostra cassaforte crittografata.
+            Seleziona almeno 10 foto e 3 video. I file verranno inviati direttamente alla nostra cassaforte crittografata (si aprira in una nuova scheda).
           </p>
           
           <a 
@@ -32,10 +32,20 @@ export default function ThankYouPage() {
           >
             Apri Cassaforte Upload
           </a>
+        </div>
 
-          <p className="mt-6 text-[10px] text-zinc-500 font-light italic">
-            Dopo l upload, puoi chiudere questa finestra. <br/> Verrai contattata entro 48h.
-          </p>
+        {/* IL NUOVO BOTTONE CHE PORTA ALLA PAGINA FINAL */}
+        <a 
+          href="/final" 
+          className="inline-block mt-2 mb-8 text-xs tracking-widest text-amber-500 hover:text-amber-400 uppercase transition-colors font-bold border-b border-amber-500/30 hover:border-amber-400 pb-1"
+        >
+          Ho completato l upload →
+        </a>
+
+        <div className="block mt-4">
+          <a href="/casting" className="text-[10px] tracking-[0.2em] text-zinc-600 hover:text-amber-500 uppercase transition-colors font-semibold">
+            ← Torna al sito
+          </a>
         </div>
       </div>
     </div>
